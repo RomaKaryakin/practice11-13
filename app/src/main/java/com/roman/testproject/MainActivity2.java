@@ -7,24 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity2 extends AppCompatActivity {
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         getSupportActionBar().hide();
-        onCreateListener();
+        OnCreateListener();
     }
 
-    private void onCreateListener() {
-        Button button;
+    private void OnCreateListener() {
+        button = (Button)findViewById(R.id.button3);
 
-        button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                Intent intent = new Intent(MainActivity2.this, NavigationPage.class);
                 startActivity(intent);
             }
         });
